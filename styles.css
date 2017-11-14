@@ -16,8 +16,8 @@ a {
 }
 
 #js--lifespan--text span {
-    margin-right: 1rem;
-    display: inline-block;
+	display:      inline-block;
+	margin-right: 1rem;
 }
 
 .lifespan--day {
