@@ -1,12 +1,17 @@
 body {
 	font-family: sans-serif;
-	margin:  0;
-	padding: 1rem;
+	margin:      0;
+	padding:     1rem;
 }
 
 h1,
 p {
 	text-align: center;
+}
+
+a {
+	color:           #3689e6;
+	text-decoration: none;
 }
 
 .lifespan--day {
