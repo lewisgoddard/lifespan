@@ -39,11 +39,11 @@ function lifespan(dob, lifespan = 100) {
 
 	area.innerHTML = html
 
-	text.innerHTML = '<p>Estimated days in lifespan: '   + days_lifespan.toLocaleString() +
-	                 '&emsp;<wbr> Days lived: '               + days_lived.toLocaleString()    +
-	                 '&emsp;<wbr> Estimated days remaining: ' + days_unlived.toLocaleString()  +
-	                 '&emsp;<wbr> Completion: ' +
-	                 ( ( days_lived / days_lifespan ) * 100 ).toLocaleString() + ' %' +
+	text.innerHTML = '<p>' + 
+	                 '<span>Estimated days in lifespan: ' + days_lifespan.toLocaleString() + '</span>' +
+	                 '<span>Days lived: '                 + days_lived.toLocaleString()    + '</span>' +
+	                 '<span>Estimated days remaining: '   + days_unlived.toLocaleString()  + '</span>' +
+	                 '<span>Completion: ' + ( ( days_lived / days_lifespan ) * 100 ).toLocaleString() + ' %</span>' +
 	                 '</p>'
 
 }
