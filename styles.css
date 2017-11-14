@@ -6,6 +6,7 @@ body {
 
 h1,
 p {
+	font-weight: normal;
 	text-align: center;
 }
 
