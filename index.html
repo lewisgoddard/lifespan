@@ -14,7 +14,7 @@
 		<content>
 			<div id="js--lifespan--inputs">
 				<input  id="js--lifespan--inputs--date"   type="date"   value="1994-01-16" placeholder="1994-01-16">
-				<input  id="js--lifespan--inputs--years"  type="number" value="100"        placeholder="100">
+				<input  id="js--lifespan--inputs--years"  type="number" value="100"        placeholder="100"        min="0">
 				<button id="js--lifespan--inputs--submit" type="submit">Live</button>
 			</div>
 			<div id="js--lifespan--text"></div>
@@ -38,5 +38,4 @@
 		}
 		document.getElementById('js--lifespan--inputs--submit').onclick = function() {customLifespan()}
 	</script>
-	<script src="vanilla.downBoy.js"></script>
 </html>

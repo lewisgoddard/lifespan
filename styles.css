@@ -5,10 +5,6 @@ body {
 	padding:     1rem;
 }
 
-footer {
-	width: calc(100% - 2rem);
-}
-
 h1,
 p,
 #js--lifespan--inputs {

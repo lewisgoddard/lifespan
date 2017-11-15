@@ -5,7 +5,8 @@ function lifespan(dob, lifespan = 100) {
 
 	var area          = document.getElementById('js--lifespan--area')
 	var text          = document.getElementById('js--lifespan--text')
-	var html          = ''
+	var areaHTML      = ''
+	var textHTML      = ''
 	var current_date  = new Date()
 	var lifespan      = parseFloat(lifespan)
 	dob               = new Date(dob)
@@ -20,15 +21,17 @@ function lifespan(dob, lifespan = 100) {
 	)
 
 	var days_lived    = Math.round(
-		// Get time stamps in milliseconds
 		( current_date.getTime() - dob.getTime() )
 		/
-		// Milliseconds * Second * Minutes * Hours
 		( 1000 * 60 * 60 * 24 )
 	)
 
 	var days_unlived  = ( days_lifespan - days_lived )
 	var days_deceased = ( days_lived - days_lifespan )
+	var completion    = ( days_lived / days_lifespan ) * 100
+	if ( days_deceased > 0 ) {
+		var days_lived = ( days_lived - days_deceased )
+	}
 
 	console.log('Date of Birth: '    + dob)
 	console.log('End of Life: '      + end_of_life)
@@ -36,20 +39,34 @@ function lifespan(dob, lifespan = 100) {
 	console.log('Days Lived: '       + days_lived)
 	console.log('Days Unlived: '     + days_unlived)
 	console.log('Days Deceased: '    + days_deceased)
+	console.log('Completion: '    + completion)
 
-	html += '<div class="lifespan--day lifespan--day--lived"></div>'.repeat(days_lived)
+	if ( days_lived > 0 ) {
+		areaHTML += '<div class="lifespan--day lifespan--day--lived"></div>'.repeat(days_lived)
+	}
 	if ( days_unlived > 0 ) {
-		html += '<div class="lifespan--day lifespan--day--unlived"></div>'.repeat(days_unlived)
-	} else {
-		html += '<div class="lifespan--day lifespan--day--deceased"></div>'.repeat(days_deceased)
+		areaHTML += '<div class="lifespan--day lifespan--day--unlived"></div>'.repeat(days_unlived)
+	}
+	if ( days_deceased > 0 ) {
+		areaHTML += '<div class="lifespan--day lifespan--day--deceased"></div>'.repeat(days_deceased)
 	}
 
-	area.innerHTML = html
-	text.innerHTML = '<p>' +
-	                 '<span>Estimated days in lifespan: ' + days_lifespan.toLocaleString() + '</span>' +
-	                 '<span>Days lived: '                 + days_lived.toLocaleString()    + '</span>' +
-	                 '<span>Estimated days remaining: '   + days_unlived.toLocaleString()  + '</span>' +
-	                 '<span>Completion: ' + ( ( days_lived / days_lifespan ) * 100 ).toLocaleString() + ' %</span>' +
-	                 '</p>'
+	textHTML += '<p>' + '<span>Estimated days in lifespan: ' + days_lifespan.toLocaleString() + '</span>'
+	if ( days_lived > 0 ) {
+		textHTML += '<span>Days lived: '               + days_lived.toLocaleString()    + '</span>'
+	}
+	if ( days_unlived > 0 ) {
+		textHTML += '<span>Estimated days remaining: ' + days_unlived.toLocaleString()  + '</span>'
+	}
+	if ( days_deceased > 0 ) {
+		textHTML += '<span>Estimated days deceased: '  + days_deceased.toLocaleString() + '</span>'
+	}
+	if ( completion < 100 ) {
+		textHTML += '<span>Completion: '               + completion.toLocaleString()    + ' %</span>'
+	}
+	textHTML += '</p>'
+
+	area.innerHTML = areaHTML
+	text.innerHTML = textHTML
 
 }
