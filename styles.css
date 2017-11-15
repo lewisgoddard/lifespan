@@ -5,8 +5,13 @@ body {
 	padding:     1rem;
 }
 
+footer {
+	width: calc(100% - 2rem);
+}
+
 h1,
-p {
+p,
+#js--lifespan--inputs {
 	font-weight: normal;
 	text-align: center;
 }
@@ -35,4 +40,7 @@ a {
 }
 .lifespan--day--unlived {
 	background: #68b723;
+}
+.lifespan--day--deceased {
+	background: #7a0000;
 }
