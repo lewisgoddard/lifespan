@@ -25,6 +25,9 @@ function lifespan(dob, lifespan = 100) {
 		/
 		( 1000 * 60 * 60 * 24 )
 	)
+	if ( days_lived < 0 ) {
+		days_lived = 0
+	}
 
 	var days_unlived  = ( days_lifespan - days_lived )
 	var days_deceased = ( days_lived - days_lifespan )
@@ -39,7 +42,7 @@ function lifespan(dob, lifespan = 100) {
 	console.log('Days Lived: '       + days_lived)
 	console.log('Days Unlived: '     + days_unlived)
 	console.log('Days Deceased: '    + days_deceased)
-	console.log('Completion: '    + completion)
+	console.log('Completion: '       + completion)
 
 	if ( days_lived > 0 ) {
 		areaHTML += '<div class="lifespan--day lifespan--day--lived"></div>'.repeat(days_lived)
@@ -61,7 +64,7 @@ function lifespan(dob, lifespan = 100) {
 	if ( days_deceased > 0 ) {
 		textHTML += '<span>Estimated days deceased: '  + days_deceased.toLocaleString() + '</span>'
 	}
-	if ( completion < 100 ) {
+	if ( completion < 100 && completion > 0 ) {
 		textHTML += '<span>Completion: '               + completion.toLocaleString()    + ' %</span>'
 	}
 	textHTML += '</p>'
