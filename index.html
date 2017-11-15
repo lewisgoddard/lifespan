@@ -13,9 +13,15 @@
 		</header>
 		<content>
 			<div id="js--lifespan--inputs">
-				<input  id="js--lifespan--inputs--date"   type="date"   value="1994-01-16" placeholder="1994-01-16">
-				<input  id="js--lifespan--inputs--years"  type="number" value="100"        placeholder="100"        min="0">
-				<button id="js--lifespan--inputs--submit" type="submit">Live</button>
+				<span>
+					<label for="js--lifespan--inputs--date">Date of Birth</label>
+					<input id="js--lifespan--inputs--date" type="date" value="1994-01-16" placeholder="1994-01-16">
+				</span>
+				<span>
+					<label for="js--lifespan--inputs--years">Lifespan (years)</label>
+					<input id="js--lifespan--inputs--years" type="number" value="100" placeholder="100" min="0" max="999">
+				</span>
+				<button id="js--lifespan--inputs--submit" type="submit">Calculate</button>
 			</div>
 			<div id="js--lifespan--text"></div>
 			<div id="js--lifespan--area"></div>

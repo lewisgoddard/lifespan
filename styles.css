@@ -20,6 +20,7 @@ a {
 	text-decoration: none;
 }
 
+#js--lifespan--inputs span,
 #js--lifespan--text span {
 	display:      inline-block;
 	margin-right: 1rem;
