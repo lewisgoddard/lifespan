@@ -27,10 +27,13 @@ a {
 }
 
 .lifespan--day {
-	display: inline-block;
-	height:  5px;
-	margin:  0 1px 1px 0;
-	width:   5px;
+    border-bottom: 1px solid #ffffff;
+    border-right:  1px solid #ffffff;
+	box-sizing:    border-box;
+	display:       inline-block;
+	height:        3px;
+	min-width:     3px;
+    width:         calc(100% / 365);
 }
 .lifespan--day--lived {
 	background: #c6262e;
