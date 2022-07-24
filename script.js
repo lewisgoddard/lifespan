@@ -1,7 +1,7 @@
-function lifespan(dob, lifespan = 100) {
+function lifespan(dob, lifespan = 85) {
 	// dob      = Date of Birth
 	// lifespan = years of expected lifespan
-	//            defaults to 100 years
+	//            defaults to 85 years
 
 	var area          = document.getElementById('js--lifespan--area')
 	var text          = document.getElementById('js--lifespan--text')
