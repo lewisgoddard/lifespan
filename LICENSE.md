@@ -1,7 +1,7 @@
 The MIT License (MIT)
 ==================
 
-Copyright &copy; 2022 [Lewis Goddard](https://lewisgoddard.me.uk)
+Copyright &copy; 2023 [Lewis Goddard](https://lewisgoddard.me.uk)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
