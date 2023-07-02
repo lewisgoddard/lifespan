@@ -21,8 +21,19 @@ a {
 .align-right {
 	text-align: right;
 }
+.align-left {
+	text-align: left;
+}
+figure {
+	max-width: 60rem;
+	display: block;
+	margin: 0 auto;
+}
 table {
 	width: 100%;
+}
+tbody tr:nth-child(odd) {
+	background-color: #eee;
 }
 
 #js--lifespan--inputs span,
