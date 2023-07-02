@@ -20,6 +20,9 @@ a {
 .align-right {
 	text-align: right;
 }
+table {
+	width: 100%;
+}
 
 #js--lifespan--inputs span,
 #js--lifespan--text span {
