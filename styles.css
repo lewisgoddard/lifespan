@@ -8,6 +8,7 @@ body {
 h1,
 h2,
 .align-center,
+#js--lifespan--text,
 #js--lifespan--inputs {
 	font-weight: normal;
 	text-align: center;
