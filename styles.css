@@ -19,6 +19,9 @@ a {
 	color:           #3689e6;
 	text-decoration: none;
 }
+.align-right {
+	text-align: right;
+}
 
 #js--lifespan--inputs span,
 #js--lifespan--text span {
