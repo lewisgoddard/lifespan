@@ -44,14 +44,38 @@ function lifespan(dob, lifespan = 85) {
 	console.log('Days Deceased: '    + days_deceased)
 	console.log('Completion: '       + completion)
 
-	if ( days_lived > 0 ) {
-		areaHTML += '<div class="lifespan--day lifespan--day--lived"></div>'.repeat(days_lived)
-	}
-	if ( days_unlived > 0 ) {
-		areaHTML += '<div class="lifespan--day lifespan--day--unlived"></div>'.repeat(days_unlived)
-	}
-	if ( days_deceased > 0 ) {
-		areaHTML += '<div class="lifespan--day lifespan--day--deceased"></div>'.repeat(days_deceased)
+	for ( var i = 0; i < days_lifespan; i++ ) {
+		var day = new Date(dob)
+		day.setDate( day.getDate() + i )
+
+		var classes = 'lifespan--day'
+
+		if ( i < days_lived ) {
+			classes += ' lifespan--day--lived'
+		} else if ( days_deceased > 0 ) {
+			classes += ' lifespan--day--deceased'
+		} else {
+			classes += ' lifespan--day--unlived'
+		}
+
+		if ( day.getMonth() % 2 === 1 ) {
+			classes += ' lifespan--day--alt-month'
+		}
+
+		var label = day.toLocaleDateString( undefined, {
+			weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+		} )
+
+		if ( i > 0 && day.getDate() === dob.getDate() && day.getMonth() === dob.getMonth() ) {
+			classes += ' lifespan--day--birthday'
+			label   += ' — Birthday'
+		}
+		if ( day.getDate() === 1 && day.getMonth() === 0 ) {
+			classes += ' lifespan--day--newyear'
+			label   += ' — New Year'
+		}
+
+		areaHTML += '<div class="' + classes + '" title="' + label + '"></div>'
 	}
 
 	textHTML += '<p>' + '<span>Estimated days in lifespan: ' + days_lifespan.toLocaleString() + '</span>'

@@ -60,3 +60,16 @@ tbody tr:nth-child(odd) {
 .lifespan--day--deceased {
 	background: #7a0000;
 }
+.lifespan--day--alt-month {
+	filter: brightness(0.9);
+}
+.lifespan--day--birthday {
+	background: #f5a623;
+}
+.lifespan--day--newyear {
+	background: #3689e6;
+}
+.lifespan--day:hover {
+	outline: 1px solid #333333;
+	outline-offset: -1px;
+}
