@@ -42,34 +42,21 @@ tbody tr:nth-child(odd) {
 	margin-right: 1rem;
 }
 
-.lifespan--day {
-	border-bottom: 1px solid #ffffff;
-	border-right:  1px solid #ffffff;
-	box-sizing:    border-box;
-	display:       inline-block;
-	height:        6px;
-	min-width:     5px;
-	width:         calc(100% / 365);
+#js--lifespan--canvas {
+	display: block;
 }
-.lifespan--day--lived {
-	background: #c6262e;
-}
-.lifespan--day--unlived {
-	background: #68b723;
-}
-.lifespan--day--deceased {
-	background: #7a0000;
-}
-.lifespan--day--alt-month {
-	filter: brightness(0.9);
-}
-.lifespan--day--birthday {
-	background: #f5a623;
-}
-.lifespan--day--newyear {
-	background: #3689e6;
-}
-.lifespan--day:hover {
-	outline: 1px solid #333333;
-	outline-offset: -1px;
+
+#js--lifespan--tooltip {
+	background:    #333333;
+	border-radius: 3px;
+	color:         #ffffff;
+	display:       none;
+	font-size:     0.8rem;
+	left:          0;
+	padding:       0.25rem 0.5rem;
+	pointer-events: none;
+	position:      fixed;
+	top:           0;
+	white-space:   nowrap;
+	z-index:       10;
 }
